@@ -1,3 +1,10 @@
+/**
+ * A function that returns a random integer between zero and a max number
+ * @param {numer} max le nombre maximum exclus
+ * @returns an integer between zero and max excluded
+ */
+export const getRandomInt = (max) => Math.floor(Math.random() * max);
+
 export const playerLetters = [
   { id: 1, letter: 'L', score: 1 },
   { id: 2, letter: 'E', score: 1 },

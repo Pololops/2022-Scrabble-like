@@ -1,23 +1,32 @@
 import './style.scss';
+
+import { useEffect } from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { getLetterFromDeck } from 'src/actions';
+
 import Letter from './Letter';
 
-// data
-import { playerLetters, letters } from '../../../data';
-
-console.log(
-  'Nombre de lettres total : ',
-  letters.map(({ quantity }) => quantity).reduce((a, b) => a + b),
-);
-
 export default function Letters() {
+  const playerLetters = useSelector((state) => state.playerLetters);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getLetterFromDeck());
+  }, []);
+
+  const handleClick = () => {
+    dispatch(getLetterFromDeck());
+  };
+
   return (
     <div className="letters">
-      {playerLetters.map(({ id, letter, score }) => (
+      <button type="button" onClick={handleClick}>click</button>
+      {playerLetters.map((letter) => (
         <Letter
-          key={id}
+          key={letter.id}
+          {...letter}
           className="letters__letter"
-          letter={letter}
-          score={score}
         />
       ))}
     </div>

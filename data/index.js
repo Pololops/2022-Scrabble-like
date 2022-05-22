@@ -3,7 +3,7 @@
  * @param {numer} max le nombre maximum exclus
  * @returns an integer between zero and max excluded
  */
-export const getRandomInt = (max) => Math.floor(Math.random() * max);
+export const getRandomInt = (max) => Math.ceil(Math.random() * max);
 
 export const playerLetters = [
   { id: 1, letter: 'L', score: 1 },
@@ -15,7 +15,7 @@ export const playerLetters = [
   { id: 7, letter: 'S', score: 1 },
 ];
 
-export const letters = [
+export const deckLetters = [
   { letter: 'A', score: 1, quantity: 9 },
   { letter: 'B', score: 3, quantity: 2 },
   { letter: 'C', score: 3, quantity: 2 },

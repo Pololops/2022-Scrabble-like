@@ -9,8 +9,10 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Board />
-      <Letters />
+      <div className="app__game">
+        <Board />
+        <Letters />
+      </div>
     </div>
   );
 }

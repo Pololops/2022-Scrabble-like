@@ -1,35 +1,41 @@
 .letters {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  gap: 0.4rem;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 0.2rem;
 
   &__letter {
     position: relative;
     cursor: pointer;
-    flex-shrink: 0;
-    width: 4.2rem;
-    height: 4rem;
-    font-size: 2.2rem;
-    color: rgba(255,255,255,0.3);
-    text-shadow :0 -1px 0 black;
-    line-height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 2.1rem;
+    max-width: 4.2rem;
+    width: calc(100% / 7);
+    aspect-ratio: 1 / 0.95;
+    font-size: 1.8em;
+
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: 0 -1px 0 black;
     text-align: center;
-    border-radius: 6px 6px 8px 8px;
+    border-radius: 4px 4px 6px 6px;
     background-color: var(--letter-primary-color);
     box-shadow: 0 8px 0 var(--letter-secondary-color);
     transform-origin: bottom center;
-    transition: all 0.1s ease-out, filter 0.2s ease-in-out;
+    transition: all 0.1s ease-out, filter 0.1s ease-in-out;
 
     transform: rotateX(30deg);
 
     &__score {
       position: absolute;
-      font-size: 0.7rem;
-      line-height: 0.7rem;
-      bottom: 0.3rem;
-      right: 0.3rem;
+      bottom: 0;
+      right: 0;
+      padding-bottom: 0.1em;
+      padding-right: 0.3em;
+      font-size: 0.3em;
     }
 
     &:hover {
@@ -37,10 +43,19 @@
     }
 
     &:active {
+      border-radius: 4px;
       transform: scale(1.2, 1.2) rotateX(0deg);
       filter: brightness(1.2) drop-shadow(0 3px 8px black);
-      box-shadow: 0 3px 0 var(--letter-secondary-color);
+      box-shadow: 0 0px 0 var(--letter-secondary-color);
       z-index: 2;
     }
+  }
+}
+
+@media (min-height: 500px) {
+  .letters {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
   }
 }

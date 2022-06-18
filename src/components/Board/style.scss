@@ -1,3 +1,31 @@
 .board {
-  flex-grow: 1;
+  border-color: dimgray;
+  border-style: solid;
+  border-width: 1px;
+  aspect-ratio: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: calc(100vw - 10rem);
+  max-height: calc(100vh - 1rem);
+
+  &__square {
+    width: calc(100% / 15);
+    border-color: dimgray;
+    border-style: solid;
+    border-width: 1px;
+
+    &:after {
+      content: '';
+      padding-top: calc(100% / 15);
+    }
+  }
+}
+
+@media (min-height: 500px) {
+  .board {
+    max-width: calc(100vw - 1rem);
+    max-height: calc(100vh - 10rem);
+    width: 100%;
+  }
 }

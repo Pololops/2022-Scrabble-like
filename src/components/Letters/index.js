@@ -20,15 +20,15 @@ export default function Letters() {
   };
 
   return (
-    <div className="letters">
-      <button type="button" onClick={handleClick}>click</button>
-      {playerLetters.map((letter) => (
-        <Letter
-          key={letter.id}
-          {...letter}
-          className="letters__letter"
-        />
-      ))}
-    </div>
+    <>
+      <button type="button" onClick={handleClick}>
+        click
+      </button>
+      <div className="letters">
+        {playerLetters.map((letter) => (
+          <Letter key={letter.id} {...letter} className="letters__letter" />
+        ))}
+      </div>
+    </>
   );
 }

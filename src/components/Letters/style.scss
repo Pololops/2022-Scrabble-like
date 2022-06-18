@@ -20,7 +20,7 @@
     background-color: var(--letter-primary-color);
     box-shadow: 0 8px 0 var(--letter-secondary-color);
     transform-origin: bottom center;
-    transition: all 0.1s ease-out, filter 0.3s ease-in-out;
+    transition: all 0.1s ease-out, filter 0.2s ease-in-out;
 
     transform: rotateX(30deg);
 
@@ -38,7 +38,9 @@
 
     &:active {
       transform: scale(1.2, 1.2) rotateX(0deg);
-      box-shadow: 0 2px 8px black;
+      filter: brightness(1.2) drop-shadow(0 3px 8px black);
+      box-shadow: 0 3px 0 var(--letter-secondary-color);
+      z-index: 2;
     }
   }
 }

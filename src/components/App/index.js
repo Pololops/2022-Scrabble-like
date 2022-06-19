@@ -11,10 +11,8 @@ function App() {
     <div className="app">
       <GetLetterButton />
       <Header />
-      <div className="app__game">
-        <Board />
-        <Letters />
-      </div>
+      <Board />
+      <Letters />
     </div>
   );
 }

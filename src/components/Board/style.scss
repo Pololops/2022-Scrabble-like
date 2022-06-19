@@ -6,7 +6,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  max-width: calc(100vw - 10rem);
+  max-width: calc(100vw - 8rem);
   max-height: calc(100vh - 1rem);
 
   &__square {
@@ -22,10 +22,11 @@
   }
 }
 
-@media (min-height: 500px) {
+@media (min-height: 480px) {
   .board {
     max-width: calc(100vw - 1rem);
-    max-height: calc(100vh - 10rem);
+    max-height: calc(100vh - 8rem);
     width: 100%;
+    margin-top: 0;
   }
 }

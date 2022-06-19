@@ -1,20 +1,23 @@
 .letters {
-  margin-bottom: 1rem;
+  height: 100%;
+  padding-top: .5rem;
+  padding-bottom: 1rem;
+  margin-right: 1rem;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 0.2rem;
 
   &__letter {
-    position: relative;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-width: 2.1rem;
     max-width: 4.2rem;
-    width: calc(100% / 7);
+    height: calc(100% / 7);
+    width: initial;
     aspect-ratio: 1 / 0.95;
     font-size: 1.8em;
 
@@ -24,10 +27,15 @@
     border-radius: 4px 4px 6px 6px;
     background-color: var(--letter-primary-color);
     box-shadow: 0 8px 0 var(--letter-secondary-color);
-    transform-origin: bottom center;
-    transition: all 0.1s ease-out, filter 0.1s ease-in-out;
 
+    /* Pop animation on click */
+    transform-origin: bottom center;
     transform: rotateX(30deg);
+    transition: border-radius 0.1s ease-out, box-shadow 0.1s ease-out,
+      transform 0.1s ease-out, filter 0.1s ease-in-out;
+
+    /* Start appear slidein animation */
+    animation: slidein-from-bottom 0.3s ease-out;
 
     &__score {
       position: absolute;
@@ -35,7 +43,7 @@
       right: 0;
       padding-bottom: 0.1em;
       padding-right: 0.3em;
-      font-size: 0.3em;
+      font-size: 0.4em;
     }
 
     &:hover {
@@ -46,7 +54,7 @@
       border-radius: 4px;
       transform: scale(1.2, 1.2) rotateX(0deg);
       filter: brightness(1.2) drop-shadow(0 3px 8px black);
-      box-shadow: 0 0px 0 var(--letter-secondary-color);
+      box-shadow: 0 3px 0 var(--letter-secondary-color);
       z-index: 2;
     }
   }
@@ -55,7 +63,46 @@
 @media (min-height: 500px) {
   .letters {
     flex-direction: row;
-    justify-content: center;
     width: 100%;
+    height: initial;
+    margin-right: 0;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+
+    &__letter {
+      width: calc(100% / 7);
+      height: initial;
+
+      /* Start appear slidein animation */
+      animation: slidein-from-right 0.3s ease-out;
+    }
+  }
+}
+
+/* slideIn from right animation on new letter for player */
+@keyframes slidein-from-right {
+  0% {
+    position: absolute;
+    left: 200%;
+    opacity: 0;
+  }
+
+  100% {
+    position: relative;
+    left: 0%;
+    opacity: 1;
+  }
+}
+
+/* slideIn from bottom animation on new letter for player */
+@keyframes slidein-from-bottom {
+  from {
+    position: absolute;
+    top: 200%;
+  }
+
+  to {
+    position: relative;
+    top: 0%;
   }
 }

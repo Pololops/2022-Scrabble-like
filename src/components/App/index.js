@@ -1,5 +1,6 @@
 // Imports
 import './styles.scss';
+import GetLetterButton from '../GetLetterButton';
 import Header from '../Header';
 import Board from '../Board';
 import Letters from '../Letters';
@@ -8,6 +9,7 @@ import Letters from '../Letters';
 function App() {
   return (
     <div className="app">
+      <GetLetterButton />
       <Header />
       <div className="app__game">
         <Board />

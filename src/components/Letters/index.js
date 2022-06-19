@@ -15,20 +15,11 @@ export default function Letters() {
     dispatch(getLetterFromDeck());
   }, []);
 
-  const handleClick = () => {
-    dispatch(getLetterFromDeck());
-  };
-
   return (
-    <>
-      <button type="button" onClick={handleClick}>
-        click
-      </button>
-      <div className="letters">
-        {playerLetters.map((letter) => (
-          <Letter key={letter.id} {...letter} className="letters__letter" />
-        ))}
-      </div>
-    </>
+    <div className="letters">
+      {playerLetters.map((letter) => (
+        <Letter key={letter.id} {...letter} className="letters__letter" />
+      ))}
+    </div>
   );
 }

@@ -16,12 +16,12 @@
     flex-direction: column;
     justify-content: center;
     min-width: 2rem;
-    max-width: 3rem;
+    max-width: 4rem;
     height: calc(100% / 7);
     min-height: 2rem;
-    max-height: 3rem;
+    max-height: 4rem;
     aspect-ratio: 1 / 0.95;
-    font-size: 1.8em;
+    font-size: 8vh;
 
     color: rgba(255, 255, 255, 0.3);
     text-shadow: 0 -1px 0 black;
@@ -43,7 +43,7 @@
       position: absolute;
       bottom: 0.1em;
       right: 0.3em;
-      font-size: 0.35em;
+      font-size: 0.4em;
     }
 
     &:hover {
@@ -51,11 +51,12 @@
     }
 
     &:active {
+      position: relative;
       border-radius: 5px;
       transform: scale(1.2, 1.2) rotateX(0deg);
       filter: brightness(1.2) drop-shadow(0 3px 8px black);
       box-shadow: 0 2px 0 var(--letter-secondary-color);
-      z-index: 2;
+      z-index: 1;
     }
   }
 }
@@ -66,12 +67,12 @@
     width: 100%;
     height: initial;
     margin-right: 0;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
 
     &__letter {
       width: calc(100% / 7);
       height: auto;
+      margin-top: -0.5rem;
+      font-size: 2.2em;
 
       /* Start appear slidein animation */
       animation: slidein-from-right 0.3s ease-out;

@@ -27,7 +27,9 @@ function App() {
     /* ... */
   }, []);
   const onDragEnd = useCallback((result) => {
-    dispatch(resortLetter(result));
+    if (result.destination) {
+      dispatch(resortLetter(result));
+    }
   }, []);
 
   return (

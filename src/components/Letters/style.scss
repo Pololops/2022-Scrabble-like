@@ -36,8 +36,10 @@
     transition: border-radius 0.1s ease-out, box-shadow 0.1s ease-out,
       transform 0.1s ease-out, filter 0.1s ease-in-out;
 
-    /* Start appear slidein animation */
-    animation: slidein-from-bottom 0.3s ease-out;
+    &-appear {
+      /* Start appear slidein animation */
+      animation: slidein-from-bottom 0.3s ease-out;
+    }
 
     &__score {
       position: absolute;
@@ -74,8 +76,10 @@
       width: calc(100% / 7);
       height: auto;
 
-      /* Start appear slidein animation */
-      animation: slidein-from-right 0.3s ease-out;
+      &-appear {
+        /* Start appear slidein animation */
+        animation: slidein-from-right 0.3s ease-out;
+      }
     }
   }
 }

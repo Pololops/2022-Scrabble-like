@@ -7,7 +7,7 @@ export default function Board() {
   return (
     <div className="board">
       {squares.map(() => squares.map((_, index) => (
-        <Droppable droppableId={`droppable-board-${index}`}>
+        <Droppable key={index} droppableId={`droppable-board-${index}`}>
           {(provided) => (
             <div
               className="board__square"

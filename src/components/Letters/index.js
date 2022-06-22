@@ -24,12 +24,10 @@ export default function Letters() {
           ref={provided.innerRef}
           {...provided.droppableProps}
         >
-          {playerLetters.map(({ id, letter, score }, index) => (
+          {playerLetters.map((letter, index) => (
             <Letter
-              key={id}
-              id={id}
-              letter={letter}
-              score={score}
+              key={letter.id}
+              {...letter}
               index={index}
               className="letters__letter"
             />

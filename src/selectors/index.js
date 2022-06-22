@@ -27,8 +27,6 @@ export function getRandomItemFromDeck(deck) {
   const nbInDeck = nbItemsInDeck(deck);
   let randomInt = getRandomInt(nbInDeck);
 
-  console.log('random nb : ', randomInt, '/', nbInDeck);
-
   if (nbInDeck > 0) {
     const indexLetter = deck.findIndex((item) => {
       if (randomInt > item.quantity) {
